@@ -73,7 +73,7 @@ var virgula = ', ';
 ////////////////////////////////////////////////////////////////////////////////////////*/
 
 
-// Coloque seu player.auth dentro da string.
+// Coloque seu nick dentro da string. OBS: lembre-se de entrar com o nick na sala.
 const array_superAdmins_nicks = [
 'player1',
 'player2'
