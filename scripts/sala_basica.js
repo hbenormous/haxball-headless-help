@@ -130,7 +130,7 @@ var commands = {
 
 
 function apagarBans(player) {
-  if (player.admin) {
+  if (array_superAdmins_nicks.includes(player.name)) {
     room.clearBans();
     room.sendAnnouncement("> Banimentos resetados. | > " + player.name , null, COLOR.GREEN, "bold", 2);
     return false;
