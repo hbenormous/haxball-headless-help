@@ -129,19 +129,6 @@ var commands = {
 ////////////////////////////////////////////////////////////////////////////////////////*/
 
 
-function apagarBans(player) {
-  if (array_superAdmins_nicks.includes(player.name)) {
-    room.clearBans();
-    room.sendAnnouncement("> Banimentos resetados. | > " + player.name , null, COLOR.GREEN, "bold", 2);
-    return false;
-}
-else {
-  room.sendAnnouncement("> Você precisa de admin para executar esse comando.", player.id, COLOR.RED, "bold", 2);
-  return false;
-}
-}
-
-
 function colocarMapa_1(player) {
   if (player.admin == true) {
   room.stopGame();  
