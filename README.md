@@ -4,5 +4,5 @@
 
 # About
 *discord:* https://discord.gg/UWYuxwEKfn <br>
-*github:* https://github.com/hbenormous/haxball-headless-help/
-
+*github:* https://github.com/hbenormous/haxball-headless-help/ <br>
+*site:* https://haxballheadlesshelp.ueuo.com/
