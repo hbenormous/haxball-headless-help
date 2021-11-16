@@ -1,5 +1,3 @@
-/* espaços [⠀⠀⠀⠀⠀⠀⠀⠀] */
-
 var room = HBInit({
 	roomName: 'Haxball Headless Help',
 	maxPlayers: 10,
