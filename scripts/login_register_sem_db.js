@@ -16,7 +16,7 @@ room.onPlayerChat = function(player, message) {
 
 	if (message.substr(0, 10) == '!register ') {
 		if (_registros.nome.includes(player.name)) {
-			room.sendAnnouncement('Você já está registrado.');
+			room.sendAnnouncement('Você já está registrado.', player.id);
 		}
 		else {
 			_registros.senha.push(message.substr(10));
