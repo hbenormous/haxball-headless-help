@@ -12,6 +12,7 @@ var log;
 room.onPlayerJoin = function(player) {
 	if (_registros.nome.includes(player.name)) {
 		room.sendAnnouncement('Faça login na sua conta em 15 segundos.', player.id);
+		room.sendAnnouncement('!login senha', player.id);
 		log = setTimeout(function(){ room.kickPlayer(player.id, 'Faça login na sua conta.', false); }, 1000*15);
 	}
 	else {
