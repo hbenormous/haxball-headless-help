@@ -37,13 +37,14 @@ function _enviar_stats(player){
 room.onPlayerJoin = function(player) {
     // Definindo os stats.
     if (_usuarios.includes(player.name)) {
-        room.sendAnnouncement('Digite !me');
+        room.sendAnnouncement('Digite !me', player.id);
     }
     else {
         stats[player.name] = {}
         stats[player.name].vitorias = 0;
         stats[player.name].derrotas = 0;
         _usuarios.push(player.name);
+        room.sendAnnouncement('Digite !me', player.id);
     }
 }
 
