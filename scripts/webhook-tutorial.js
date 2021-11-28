@@ -24,8 +24,8 @@ var room = HBInit({
 
 // Globais
 // https://support.discord.com/hc/pt-br/articles/228383668-Usando-Webhooks
-var webhookURL = "https://discord.com/api/webhooks/903822016916893758/DYLVgDBfYWpIyFo5RGzuH4fSvGL9n8GbaNs-0RNWIFazjlsT6M7U7383w_3aQ_je08lb"; // Webhook link
-var webhookNOME = '.'; // Webwook nome
+var webhookURL = "webhook link";
+var webhookNOME = 'webhook nome';
 
 // Funções
 function discord(mensagem) {
