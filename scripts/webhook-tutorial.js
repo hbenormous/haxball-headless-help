@@ -24,7 +24,7 @@ var room = HBInit({
 
 // Globais
 // https://support.discord.com/hc/pt-br/articles/228383668-Usando-Webhooks
-var webhookURL = "webhook link";
+var webhookURL = 'webhook link';
 var webhookNOME = 'webhook nome';
 
 // Funções
