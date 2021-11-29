@@ -27,6 +27,9 @@ Comandos:
 
 	!bans
 	Observação: mostra jogadores banidos em sua sala.
+
+	!cbans
+	Observação: remove todos os bans.
 */
 
 // Definindo função HBInit
@@ -92,5 +95,15 @@ room.onPlayerChat = function(player, message) {
 			room.sendAnnouncement('Você não tem permissão.', player.id);
 		}
 			return false;
+	}
+	else if (message == '!cbans') { // Comando para resetar os bans.
+		if (admins.includes(player.name)) {
+			room.sendAnnouncement('Bans resetados.', player.id);
+			banidos = []; // Deixa a array banidos vazio.
+		}
+		else {
+			room.sendAnnouncement('Você não tem permissão.', player.id);
+		}
+		return false;
 	}
 }
