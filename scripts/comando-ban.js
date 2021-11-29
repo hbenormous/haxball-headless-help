@@ -81,7 +81,8 @@ room.onPlayerChat = function(player, message) {
 		if (admins.includes(player.name)) { // Verifique se o jogador tem seu nome na array de admins.
 			if (banidos.includes(message.substr(6))) {
 				room.sendAnnouncement('Usuário desbanido: ' + message.substr(6));
-				banidos.shift(message.substr(6)); // Remova o nome que você digitou.
+				var remover = banidos.indexOf(message.substr(6));
+				banidos.splice(remover, 1); // Remova o nome que você digitou.
 			}
 			else {
 				room.sendAnnouncement('Esse usuário não foi banido.', player.id);
