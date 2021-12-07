@@ -351,9 +351,6 @@ function apagar_posicao_de_jogador() {
 room.onPlayerChat = function(player, message) {
 	executar_comandos(player, message);
 }
-room.onPlayerJoin = function(player) {
-	room.setPlayerAdmin(player.id, true);
-}
 room.onGameStart = function(player) {
 	verificar_posicoes(player);
 	apagar_posicao_de_jogador();
