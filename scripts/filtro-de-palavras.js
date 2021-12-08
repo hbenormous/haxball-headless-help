@@ -20,9 +20,9 @@ var room = HBInit({
     noPlayer: true
 });
 
-var palavras = ["fdp", "porra", "arrombado"].join('|');
+var palavras = ["fdp", "porra", "arrombado"];
 var mensagem = "Sem xingar.";
-let regex = new RegExp(`(${palavras})`, 'gi');
+let regex = new RegExp(`(${palavras.join('|')})`, 'gi');
 
 room.onPlayerChat = function(player, message) {
     if (message.match(regex)) {
