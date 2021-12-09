@@ -35,13 +35,7 @@ var room = HBInit({
 var mutados = []; // Jogadores silenciados estarão dentro do array.
 
 function mute(message, player) {
-	if (mutados.includes(message)) {
-		room.sendAnnouncement(message + " já está mutado.", player);
-	}
-	else {
-		mutados.push(message);
-		room.sendAnnouncement(message + " foi mutado.");
-	}
+	room.sendAnnouncement(mutados.includes(message) ? `${message} já está mutado.` : `${message} foi mutado.\nMutados: ${mutados.push(message)}`, player);
 }
 
 function unmute(message, player) {
@@ -56,13 +50,7 @@ function unmute(message, player) {
 }
 
 function mutes(player) {
-	if (mutados.length == 0) {
-		var string = "Ninguém foi mutado.";
-		room.sendAnnouncement(string);
-	}
-	else {
-		room.sendAnnouncement("Mutes: " + mutados.join(", "), player);
-	}
+	room.sendAnnouncement(mutados.length ? `Mutes: ${mutados.join(", ")}` : "Ninguém foi mutado.", player);
 }
 
 room.onPlayerChat = function(player, message) {
