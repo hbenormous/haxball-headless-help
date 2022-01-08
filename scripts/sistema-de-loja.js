@@ -120,7 +120,7 @@ room.onPlayerChat = (player, message) => {
 	if (message.toLowerCase() == "!god") {
 		if (itens.get(player.name).god >= 1) {
 			room.setPlayerDiscProperties(player.id, {radius: god_size});
-			itens.get(player_que_fez_o_gol.name).god -= 1
+			itens.get(player.name).god -= 1
 		}
 		else {
 			room.sendAnnouncement(`${emoji[3]} Você não possui esse item.`, player.id, cores.amarelo);
@@ -131,7 +131,7 @@ room.onPlayerChat = (player, message) => {
 	if (message.toLowerCase() == "!ant") {
 		if (itens.get(player.name).ant >= 1) {
 			room.setPlayerDiscProperties(player.id, {radius: ant_size});
-			itens.get(player_que_fez_o_gol.name).ant -= 1
+			itens.get(player.name).ant -= 1
 		}
 		else {
 			room.sendAnnouncement(`${emoji[3]} Você não possui esse item.`, player.id, cores.amarelo);
