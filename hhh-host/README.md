@@ -5,13 +5,13 @@
 # ⚙️ Instalação
 #### 1°.
 ```
-git clone https://github.com/hbenormous/haxball-headless-help/tree/main/hhh-host
+git clone https://github.com/hbenormous/haxball-headless-help/
 ```
 <hr>
 
 #### 2°.
 ```
-cd hhh-host
+cd haxball-headless-host/hhh-host
 ```
 <hr>
 
