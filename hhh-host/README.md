@@ -11,7 +11,7 @@ git clone https://github.com/hbenormous/haxball-headless-help/
 
 #### 2°.
 ```
-cd haxball-headless-host/hhh-host
+cd haxball-headless-help/hhh-host
 ```
 <hr>
 
