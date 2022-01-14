@@ -31,6 +31,6 @@ npm i fs
 
 #### 5°.
 ```
-npm config/index.js bot.js
+node config/index.js bot.js
 ```
 O arquivo `bot.js` é onde você inserirá o script do bot.
