@@ -3,7 +3,7 @@
 * @Titulo: Comando pause
 * @Descrição: Comando para pausar o jogo.
 * @Versão: 1
-* @Data_de_criação: 02/01/2022
+* @Data_de_criação: 26/01/2022
 * 
 * @Contatos:
 * 	Discord: https://discord.gg/UWYuxwEKfn
