@@ -2,7 +2,7 @@
  * @author aazin#8560
  * @title Sistema de loja
  * @description  Sistema de loja + itens fáceis de editar.
- * @version 1.0
+ * @version 2.0
  * @date 30/01/2022
  * @match https://www.haxball.com/headless
  * 
