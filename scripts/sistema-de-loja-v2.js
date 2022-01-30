@@ -42,7 +42,7 @@ var room = HBInit({
 
 /**
  * @add_1: Para adicionar um item você precisa editar o "itensEstrutura" por exemplo: const itensEstrutura = {god: 0, ant: 0, exemplo: 0, money: 0};
- * @add_2: Depois disso, basta criar seu comando igual à linha 81.
+ * @add_2: Depois disso, basta criar seu comando igual à linha 91.
 */
 
 // Config itens.
