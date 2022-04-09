@@ -135,7 +135,6 @@ room.onTeamVictory = scores => {
 }
 
 room.onPlayerJoin = player => {
-	room.setPlayerAdmin(player.id, true);
 	LevelSistem.check.level(player);
 }
 
