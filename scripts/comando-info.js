@@ -11,6 +11,7 @@ room.onPlayerChat = (player, message) => {
 
 		if (!PlayerInfoObject[user]) room.sendAnnouncement("Nunca entrou na sala.", player.id);
 		else room.sendAnnouncement(`ID: ${user}\nAUTH: ${PlayerInfoObject[user].auth}\nJOIN IN: ${PlayerInfoObject[user].join}`, player.id);
+		
 		return false;
 	}
 }
