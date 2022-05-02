@@ -1,5 +1,7 @@
 let room = HBInit({});
 
+/* VÍDEO: https://www.loom.com/share/615038d8a24948a48c16b9f6fb155d37 */
+
 let
 prefixString = "!",
 AccountsObject = {},
