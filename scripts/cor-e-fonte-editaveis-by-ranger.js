@@ -15,7 +15,7 @@ function Player(obj) {
 
 }
 
-const allowedPlayerAuths = ["puxe o pra essa array o auth dos jogadores que podem usar os comandos"]; // PlayerObject.auth
+const allowedPlayerAuths = ["puxe pra essa array o auth dos jogadores que podem usar os comandos"]; // PlayerObject.auth
 const playerColors = []; // : Player
 const playerAuths = {}; // { playerID: playerAuth }
 
