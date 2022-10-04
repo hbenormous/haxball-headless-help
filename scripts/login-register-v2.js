@@ -1,65 +1,46 @@
-var room = HBInit({
-	roomName: 'Haxball Headless Help',
-	maxPlayers: 10,
-	public: true,
-	noPlayer: true
-});
+const room = HBInit({});
 
-var _registros = { nome: [], senha: [] };
+const accounts = {}; // { playerName: password }
+const confirmedPlayerIDs = []; // playerID
 
-var log;
+room.onPlayerJoin = player => {
 
-room.onPlayerJoin = function(player) {
-	if (_registros.nome.includes(player.name)) {
-		room.sendAnnouncement('Faça login na sua conta em 15 segundos.', player.id);
-		room.sendAnnouncement('!login senha', player.id);
-		log = setTimeout(function(){ room.kickPlayer(player.id, 'Faça login na sua conta.', false); }, 1000*15);
-	}
-	else {
-		room.sendAnnouncement('Se registre com o comando: !register senha', player.id);
-	}
+    if (accounts[player.name]) {
+        room.sendAnnouncement("Faça login na sua conta em 15 segundos.\n" + "!login senha", player.id);
+
+        setTimeout(() => {
+            if (!confirmedPlayerIDs.includes(player.id)) room.kickPlayer(player.id, "Faça login na sua conta.", false);
+        }, 1000 * 15); // 15 segundos
+    } else room.sendAnnouncement("Se registre com o comando: !register senha", player.id);
+
 }
 
-room.onPlayerChat = function(player, message) {
+room.onPlayerLeave = player => {
 
-	if (message.substr(0, 10) == '!register ') {
-      if (_registros.nome.includes(player.name)) {
-          room.sendAnnouncement('Você já está registrado.', player.id);
-      }
-      else {
-          _registros.senha.push(message.substr(10));
-          _registros.nome.push(player.name);
-          room.sendAnnouncement('Registrado!', player.id);
-          room.sendAnnouncement('Senha: ' + message.substr(10), player.id);
-      }
-      return false;
-  }
+    if (confirmedPlayerIDs.includes(player.id)) confirmedPlayerIDs.splice(confirmedPlayerIDs.indexOf(player.id));
 
-  if (message.substr(0, 7) == '!login ') {
-      if (_registros.nome.includes(player.name)) {
-      if (_registros.nome.includes(player.name) && _registros.senha.includes(message.substr(7))) {
-          room.sendAnnouncement(player.name + ' confirmou!');
-          clearTimeout(log);
-      }
-      else if (_registros.senha !== message.substr(7)) {
-          room.sendAnnouncement('Senha incorreta.', player.id);
-      }
-  }
-  else {
-      room.sendAnnouncement('Você não está registrado.', player.id);
-  }
-  return false;
 }
 
-	if (_registros.nome.includes(player.name)) {
-registrado = message;
-room.sendAnnouncement ("[✔️] " + player.name + ": " + registrado, null);
-return false;
-}
-else {
-naoRegistrado = message;
-room.sendAnnouncement ("[❌] " + player.name + ": " + naoRegistrado, null);
-return false;
-}
+room.onPlayerChat = (player, message) => {
+
+    if (message.toLowerCase().substr(0, 10) == "!register ") {
+        if (accounts[player.name]) return room.sendAnnouncement("Você já está registrado.", player.id), false;
+
+        accounts[player.name] = message.substr(10); // cria a conta do jogador
+
+        return room.sendAnnouncement("Registrado!\n" + "Senha: " + message.substr(10), player.id), false;
+    }
+
+    if (message.toLowerCase().substr(0, 7) == "!login ") {
+        if (!accounts[player.name]) return room.sendAnnouncement("Você não está registrado.", player.id), false;
+        if (accounts[player.name] !== message.substr(7)) return room.sendAnnouncement("Senha incorreta.", player.id), false;
+
+        if (!confirmedPlayerIDs.includes(player.id)) confirmedPlayerIDs.push(player.id);
+
+        return room.sendAnnouncement(player.name + " confirmou!"), false;
+    }
+
+    // DEIXE SEMPRE AQUI EMBAIXO PRA NÃO INTERFERIR EM NADA ACIMA 
+    return room.sendAnnouncement(`[${accounts[player.name] ? "✔️" : "❌"}] ${player.name}: ${message}`), false;
 
 }
